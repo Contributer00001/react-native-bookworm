@@ -15,6 +15,11 @@ job.start();
 app.use(express.json()); 
 app.use(cors());
 
+app.get("/api/ping", (req, res) => {
+   res.status(200).send("Pong");
+ });
+ 
+
 app.use("/api/auth",authRoutes);
 app.use("/api/books", bookRoutes);
 
